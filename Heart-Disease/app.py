@@ -4,9 +4,9 @@ import joblib
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 # Load the trained model, label encoders, and scaler
-model = joblib.load(r'F:\Hack The Fall\Models\Heart Disease\heart_disease_model.pkl')
-label_encoders = joblib.load(r'F:\Hack The Fall\Models\Heart Disease\label_encoders.pkl')
-scaler = joblib.load(r'F:\Hack The Fall\Models\Heart Disease\scaler (6).pkl')
+model = joblib.load('Heart-Disease/heart_disease_model.pkl')
+label_encoders = joblib.load('Heart-Disease/label_encoders.pkl')
+scaler = joblib.load('Heart-Disease/scaler (6).pkl')
 
 # Function to make predictions
 def predict_heart_disease(new_data):
