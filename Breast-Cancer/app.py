@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load the trained model
-model = joblib.load(r'J:\projects\models\Hack-This-Fall-24\Breast-Cancer\breast_cancer_model.pkl')
+model = joblib.load(Breast-Cancer\breast_cancer_model.pkl')
 
 # Title of the app
 st.title("Breast Cancer Prediction App")
