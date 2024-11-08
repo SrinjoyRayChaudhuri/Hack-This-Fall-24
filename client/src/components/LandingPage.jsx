@@ -15,7 +15,7 @@ const LandingPage = () => {
     };
 
     const scrollToSection = () => {
-        const element = document.getElementById("learn-more-section");
+        const element = document.getElementById("how-to-use");
         element.scrollIntoView({ behavior: 'smooth' });
     };
 
@@ -60,7 +60,7 @@ const LandingPage = () => {
                                 className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-50 transition-colors"
                                 onClick={scrollToSection}  
                             >
-                                Learn More
+                                How to Use?
                             </button>
                         </div>
                     </div>
@@ -81,13 +81,11 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            {/* New Section with Related Text */}
-            <section className="container mx-auto px-6 py-20" id="learn-more-section">
-                <h2 className="text-3xl font-bold text-center mb-8">Why Predict Diseases Early?</h2>
+            
+            <section className="container mx-auto px-6 py-20" id="how-to-use">
+                <h2 className="text-3xl font-bold text-center mb-8">How to USE?</h2>
                 <p className="text-xl text-center text-gray-600">
-                    Early disease detection can save lives. With AI technology, we offer accurate predictions that help you
-                    take action before symptoms arise. Stay ahead in your health journey with predictive insights and personalized
-                    guidance.
+                    HealthPredict is a simple and easy-to-use platform that helps you predict diseases using your health data. Click Get Started and then predict your disease from the dashboard. After giving the required inputs, you will get the prediction results. Copy the results and come back to the dashboard and then open out chatbot and paste the results. The chatbot further assists you with diet, lifestyle changes and which type of doctor you should consult .
                 </p>
             </section>
 
