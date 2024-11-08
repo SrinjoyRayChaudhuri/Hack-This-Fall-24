@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-
 import { Heart, Activity, ChevronRight } from 'lucide-react';
 import Chatbot from './Chatbot';
 
@@ -9,18 +7,19 @@ const DashboardCard = ({ icon: Icon, title, description, link, color }) => (
       <Icon className="text-white" size={32} />
     </div>
     <h3 className="text-2xl font-bold mb-3">{title}</h3>
-    <p className="text-gray-600 mb-6 text-sm leading-relaxed">
-      {description}
-    </p>
+    <p className="text-gray-600 mb-6 text-sm leading-relaxed">{description}</p>
+
+    {/* Ensuring button alignment in the center */}
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group inline-flex items-center px-6 py-3 ${color} text-white rounded-xl hover:opacity-90 transition-all duration-300`}
+      className={`group inline-flex justify-center items-center px-6 py-3 ${color} text-white rounded-xl hover:opacity-90 transition-all duration-300 w-full`}
     >
       Click Here to Access
       <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
     </a>
+
     <div className="mt-6 pt-4 border-t border-gray-100">
       <p className="text-sm italic text-gray-500 flex items-center justify-center">
         <span className="inline-block w-6 h-px bg-gray-300 mr-3"></span>
@@ -40,15 +39,25 @@ const StatCard = ({ value, label, color }) => (
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 p-4 md:p-8">
-      <div className="max-w-7xl mx-auto">
+    <div
+      className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-200 to-pink-100 p-4 md:p-8 relative"
+      style={{
+        backgroundImage: `url('/dashboard.jpg')`, // Image from public folder
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      {/* Overlay to make the background more soothing */}
+      <div className="absolute inset-0 bg-black opacity-40"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Disease Prediction Models
           </h1>
-          <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
+          <p className="text-white text-base md:text-lg max-w-2xl mx-auto">
             Advanced AI-powered health prediction models to help identify potential health risks early
           </p>
         </div>
