@@ -40,19 +40,21 @@ const StatCard = ({ value, label, color }) => (
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-gray-100 to-gray-200 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
 
+        {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
             Disease Prediction Models
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
             Advanced AI-powered health prediction models to help identify potential health risks early
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3 mb-16">
+        {/* Model Cards Section */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-16">
           <DashboardCard
             icon={Heart}
             title="Diabetes Prediction"
@@ -75,11 +77,14 @@ const Dashboard = () => {
             color="bg-blue-500"
           />
         </div>
+
+        {/* Chatbot Section */}
         <Chatbot />
-       
-        <div className="bg-white rounded-2xl p-8 shadow-lg">
+
+        {/* Impact Section */}
+        <div className="bg-white rounded-2xl p-8 shadow-lg mt-12">
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Impact</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
             <StatCard 
               value="90%-100%" 
               label="Prediction Accuracy"
