@@ -13,7 +13,7 @@ This is a Streamlit-based web application that predicts the likelihood of diabet
 
 You can access the app by clicking the link below:
 
-- [Diabetes Prediction App](https://ironsoldier353-diabetes-prediction-app-9uhvp4.streamlit.app/)
+- [Diabetes Prediction App](https://ironsoldier353-diabetes-prediction.streamlit.app/)
 
 
 
