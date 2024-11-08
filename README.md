@@ -28,4 +28,9 @@ You can access the app by clicking the link below:
 - [Heart Disease Prediction App](https://hack-this-fall-24-kyjbmgr8k2tfzgmgyr3gqe.streamlit.app/)
 
 
+Lung Cancer Prediction App
+This is a Streamlit-based web application that predicts lung cancer based on user input.
 
+You can access the app by clicking the link below:
+
+https://hack-this-for-all-zmwuwx9myyxb7tzu37sm2v.streamlit.app/
