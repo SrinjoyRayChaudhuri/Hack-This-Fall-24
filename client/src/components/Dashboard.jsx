@@ -1,47 +1,48 @@
 /* eslint-disable react/prop-types */
 import { Heart, Activity, ChevronRight, Stethoscope, HeartPulse  } from 'lucide-react';
 import Chatbot from './Chatbot';
+import DarkModeToggle from './DarkModeToggle';
 
 const DashboardCard = ({ icon: Icon, title, description, link, color }) => (
-  <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-    <div className={`inline-flex items-center justify-center w-16 h-16 mb-6 rounded-xl ${color}`}>
+  <div className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+    <div className={`inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 rounded-xl ${color}`}>
       <Icon className="text-white" size={32} />
     </div>
-    <h3 className="text-2xl font-bold mb-3">{title}</h3>
-    <p className="text-gray-600 mb-6 text-sm leading-relaxed">{description}</p>
+    <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3 text-gray-900 dark:text-gray-100">{title}</h3>
+    <p className="text-gray-600 dark:text-gray-400 mb-4 md:mb-6 text-sm leading-relaxed">{description}</p>
 
-    {/* Ensuring button alignment in the center */}
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group inline-flex justify-center items-center px-6 py-3 ${color} text-white rounded-xl hover:opacity-90 transition-all duration-300 w-full`}
+      className={`group inline-flex justify-center items-center px-4 py-2 md:px-6 md:py-3 ${color} text-white rounded-xl hover:opacity-90 transition-all duration-300 w-full`}
     >
       Click Here to Access
       <ChevronRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
     </a>
 
-    <div className="mt-6 pt-4 border-t border-gray-100">
-      <p className="text-sm italic text-gray-500 flex items-center justify-center">
-        <span className="inline-block w-6 h-px bg-gray-300 mr-3"></span>
+    <div className="mt-4 md:mt-6 pt-4 border-t border-gray-100 dark:border-gray-700">
+      <p className="text-xs md:text-sm italic text-gray-500 dark:text-gray-400 flex items-center justify-center">
+        <span className="inline-block w-6 h-px bg-gray-300 dark:bg-gray-600 mr-3"></span>
         Hope for the best
-        <span className="inline-block w-6 h-px bg-gray-300 ml-3"></span>
+        <span className="inline-block w-6 h-px bg-gray-300 dark:bg-gray-600 ml-3"></span>
       </p>
     </div>
   </div>
 );
 
 const StatCard = ({ value, label, color }) => (
-  <div className="bg-white p-6 rounded-xl shadow-md">
-    <p className={`text-4xl font-bold ${color} mb-2`}>{value}</p>
-    <span className="text-gray-600 text-sm">{label}</span>
+  <div className="bg-white dark:bg-gray-800 p-4 md:p-6 rounded-xl shadow-md">
+    <p className={`text-3xl md:text-4xl font-bold ${color} mb-2`}>{value}</p>
+    <span className="text-gray-600 dark:text-gray-400 text-xs md:text-sm">{label}</span>
   </div>
 );
+
 
 const Dashboard = () => {
   return (
     <div
-      className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-200 to-pink-100 p-4 md:p-8 relative"
+      className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-200 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 p-4 md:p-8 relative"
       style={{
         backgroundImage: `url('/dashboard.jpg')`,
         backgroundSize: 'cover',
@@ -49,7 +50,11 @@ const Dashboard = () => {
       }}
     >
 
-      <div className="absolute inset-0 bg-black opacity-40"></div>
+      <div className="absolute inset-0 bg-black opacity-40 dark:opacity-60"></div>
+       {/* Dark mode toggle */}
+       <header className="absolute top-4 right-4 z-20">
+        <DarkModeToggle />
+      </header>
 
       <div className="max-w-7xl mx-auto relative z-10">
 
@@ -87,21 +92,15 @@ const Dashboard = () => {
             color="bg-blue-500"
           />
 
-          <DashboardCard
-            icon={ Heart }
-            title="Lung Cancer Prediction"
-            description="AI-powered lung cancer risk prediction using advanced machine learning models. Get early risk assessments and preventive recommendations."
-            link={import.meta.env.VITE_LUNG_CANCER_PREDICTION_URL} 
-            color="bg-yellow-500"
-          />
+          
         </div>
 
         {/* Chatbot Section */}
         <Chatbot />
 
         {/* Impact Section */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg mt-12">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Impact</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 md:p-8 shadow-lg mt-8 md:mt-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8 text-gray-800 dark:text-gray-100">Our Impact</h2>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
             <StatCard
               value="90%-100%"
