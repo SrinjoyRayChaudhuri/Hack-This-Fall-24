@@ -18,7 +18,6 @@ feature_names = data.drop(columns=['Level', 'Patient Id', 'index'], errors='igno
 # Streamlit App
 st.title("Lung Cancer Prediction")
 st.write("**User is requested to give the numeric value on a scale of 1-10 for each feature.**")
-st.write("**For 'Gender': 0 stands for Male and 1 stands for Female.**")
 
 # Input form
 user_input = {}
