@@ -116,7 +116,7 @@ const Chatbot = () => {
                 <div className="chatbot">
                     <header>
                         <h2>Chatbot(Only for Medical issue purpose)</h2>
-                        <img src="./src/assets/close_circle.svg" className='max-w-10 cursor-pointer' onClick={handleClose} />
+                        <img src="/close_circle.svg" className='max-w-10 cursor-pointer' onClick={handleClose} />
                     </header>
                     <ul className="chatbox">
                         {chatMessages.map((message, index) => (
