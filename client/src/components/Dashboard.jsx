@@ -1,4 +1,5 @@
-import { Heart, Activity, ChevronRight } from 'lucide-react';
+/* eslint-disable react/prop-types */
+import { Heart, Activity, ChevronRight, Stethoscope, HeartPulse  } from 'lucide-react';
 import Chatbot from './Chatbot';
 
 const DashboardCard = ({ icon: Icon, title, description, link, color }) => (
@@ -42,17 +43,17 @@ const Dashboard = () => {
     <div
       className="min-h-screen bg-gradient-to-br from-blue-100 via-purple-200 to-pink-100 p-4 md:p-8 relative"
       style={{
-        backgroundImage: `url('/dashboard.jpg')`, // Image from public folder
+        backgroundImage: `url('/dashboard.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      {/* Overlay to make the background more soothing */}
+
       <div className="absolute inset-0 bg-black opacity-40"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
 
-        {/* Header Section */}
+
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Disease Prediction Models
@@ -65,25 +66,33 @@ const Dashboard = () => {
         {/* Model Cards Section */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-16">
           <DashboardCard
-            icon={Heart}
+            icon={ Stethoscope }
             title="Diabetes Prediction"
             description="Advanced AI model that analyzes various health metrics to predict diabetes risk with high accuracy. Get instant risk assessment and preventive recommendations."
             link={import.meta.env.VITE_DIABETES_PREDICTION_URL} // Using the environment variable
             color="bg-red-500"
           />
           <DashboardCard
-            icon={Activity}
+            icon={ Activity }
             title="Breast Cancer Prediction"
             description="State-of-the-art breast cancer risk assessment tool utilizing machine learning for early detection and prevention strategies."
-            link={import.meta.env.VITE_BREAST_CANCER_PREDICTION_URL} 
+            link={import.meta.env.VITE_BREAST_CANCER_PREDICTION_URL}
             color="bg-pink-500"
           />
           <DashboardCard
-            icon={Heart}
+            icon={ HeartPulse }
             title="Heart Disease Prediction"
             description="Comprehensive heart health analysis using multiple parameters to evaluate cardiovascular disease risk and provide actionable insights."
-            link={import.meta.env.VITE_HEART_DISEASE_PREDICTION_URL} 
+            link={import.meta.env.VITE_HEART_DISEASE_PREDICTION_URL}
             color="bg-blue-500"
+          />
+
+          <DashboardCard
+            icon={ Heart }
+            title="Lung Cancer Prediction"
+            description="AI-powered lung cancer risk prediction using advanced machine learning models. Get early risk assessments and preventive recommendations."
+            link={import.meta.env.VITE_LUNG_CANCER_PREDICTION_URL} 
+            color="bg-yellow-500"
           />
         </div>
 
@@ -94,23 +103,23 @@ const Dashboard = () => {
         <div className="bg-white rounded-2xl p-8 shadow-lg mt-12">
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">Our Impact</h2>
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6">
-            <StatCard 
-              value="90%-100%" 
+            <StatCard
+              value="90%-100%"
               label="Prediction Accuracy"
               color="text-blue-600"
             />
-            <StatCard 
-              value="24/7" 
+            <StatCard
+              value="24/7"
               label="Health Monitoring"
               color="text-green-600"
             />
-            <StatCard 
-              value="In Testing Mode" 
+            <StatCard
+              value="In Testing Mode"
               label="Users Helped"
               color="text-yellow-900"
             />
-            <StatCard 
-              value="3+" 
+            <StatCard
+              value="3+"
               label="Disease Models"
               color="text-pink-800"
             />
