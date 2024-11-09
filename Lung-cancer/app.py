@@ -3,8 +3,8 @@ import pandas as pd
 import joblib
 
 # Load the model and scaler
-model = joblib.load('best_logistic_model.pkl')
-scaler = joblib.load('scaler.pkl')
+model = joblib.load('Lung-cancer/best_logistic_model.pkl')
+scaler = joblib.load('Lung-cancer/scaler.pkl')
 
 # Load the data
 data = pd.read_csv('lung cancer data set.csv.csv')
